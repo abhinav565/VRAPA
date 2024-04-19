@@ -1,4 +1,5 @@
 /target/
+/Files-Upload/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
