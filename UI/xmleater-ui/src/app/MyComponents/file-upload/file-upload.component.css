@@ -1,0 +1,17 @@
+.container{
+    background-color: lightblue;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container select,
+.container input,
+.container button{
+    margin-right: 10px;
+}
+
+#fileInput{
+    padding: 10px;
+}

@@ -1,0 +1,19 @@
+
+<h1>File Uploading Area</h1>
+
+<div class="container">
+    <div>
+    <label for="formFile" class="form-label">Upload Your Source XML File</label>
+</div>
+    <input type="file" name="" #fileInput>
+    <div>
+        <select #platformSelect aria-placeholder="Select" >
+            <option value="liferay">Liferay</option>
+            <option value="aem">AEM</option>
+        </select>
+    </div>
+    <div class="uploadButton">
+        <button (click)="uploadFile(platformSelect.value, fileInput)">Upload</button>
+    </div>
+    
+</div>
