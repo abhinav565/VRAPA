@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonService } from './shared/services/common.service';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,15 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor(private service:CommonService){}
+  msg=""
+  ngOnInit(): void {
+   this.service.getTest().subscribe(res=>{
+    console.log(res)
+    this.msg=res
+   })
+  }
+  
   title = 'xmleater-ui';
 }
