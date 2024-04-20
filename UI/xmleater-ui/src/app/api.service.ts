@@ -7,10 +7,10 @@ import { HttpClient } from '@angular/common/http';
 export class ApiService {
 
   constructor(private http: HttpClient) { }
-  uploadFile(platform:string, file: File){
-    const formData=new FormData();
-    formData.append('targetFormat', platform);
-    formData.append('file', file);
-    return this.http.post<any>('http://localhost:8080/xmlEater/convertAemXml', formData)
+
+  convertAemXml(formData: FormData) {
+    console.log("API Called");
+    return this.http.post<any>('http://localhost:8080/xmlEater/convertAemXml', formData);
+    
   }
 }

@@ -1,6 +1,6 @@
 
 <h1 class="heading">File Uploading Area</h1>
-
+<p class="logo"></p>
 <div class="container">
     <div class="container-item">
     <label for="formFile" class="form-label">Upload Your Source XML File</label>
@@ -13,7 +13,8 @@
         </select>
     </div>
     <div class="uploadButton container-item btn-primary">
-        <button (click)="uploadFile(platformSelect.value, fileInput)">Upload</button>
+        <button (click)="uploadFile(platformSelect.value, fileInput)">CONVERT</button>
+        <div *ngIf="uploadMessage" class="text-red-500">{{ uploadMessage }}</div>
     </div>
     
 </div>

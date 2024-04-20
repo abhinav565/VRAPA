@@ -142,6 +142,18 @@ public class XMLProcessService {
             Files.createDirectories(outputPath.getParent());
             File outputFile= outputPath.toFile();
 
+            // If the file already exists, rename it
+            if (outputFile.exists()) {
+                int count = 1;
+                String baseFileName = "target_aem";
+                String extension = ".xml";
+                while (outputFile.exists()) {
+                    outputPath = Paths.get(downloadFolderPath, baseFileName + "_" + count + extension);
+                    outputFile = outputPath.toFile();
+                    count++;
+                }
+            }
+
                     //Write Target XML to a file
                     TransformerFactory transformerFactory= TransformerFactory.newInstance();
                     Transformer transformer= transformerFactory.newTransformer();
