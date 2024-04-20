@@ -1,19 +1,32 @@
-
-<h1 class="heading">File Uploading Area</h1>
+<h1 class="heading">THE VRAPA PROJECT</h1>
 
 <div class="container">
     <div class="container-item">
-    <label for="formFile" class="form-label">Upload Your Source XML File</label>
-    <input type="file" name="" #fileInput>
-</div>
+        <label for="formFile" class="form-label">Upload Your Source XML File:</label>
+        <input type="file" name="" #fileInput>
+    </div>
     <div class="container-item">
-        <select #platformSelect>
-            <option value="liferay">Liferay</option>
+        <label style="margin-top: 16px;" for="platformSelect" class="form-label">Choose Soruce CMS: </label>
+        <select class="text1" #platformSelect>
+            <option  value="wordpress">WordPress</option>
+            <option  value="liferay">LifeRay CMS</option>
             <option value="aem">AEM</option>
         </select>
     </div>
-    <div class="uploadButton container-item btn-primary">
-        <button (click)="uploadFile(platformSelect.value, fileInput)">Upload</button>
+    <div class="container-item">
+        <label style="margin-top: 16px;" for="platformSelect" class="form-label">Choose Target CMS: </label>
+        <select class="text1" #platformSelect2>
+            <option  value="liferay">LifeRay CMS</option>
+            <option value="aem">AEM</option>
+        </select>
     </div>
-    
+    <div class="container-item">
+        <label for="formFile" class="form-label">Source URL:</label>
+        <input type="text" class="form-control" >
+    </div>
+
+    <button class="btn btn-primary btn-lg btn-block uploadButton"
+        (click)="uploadFile(platformSelect.value, fileInput)"><span class="buttonName">CONVERT</span></button>
+
+
 </div>
