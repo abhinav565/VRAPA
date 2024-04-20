@@ -4,6 +4,8 @@
     border-radius: 5px;
     align-items: center;
     justify-content: space-between;
+    height: 500px;
+    width: 800px;
 }
 
 .container select,
@@ -12,6 +14,3 @@
     margin-right: 10px;
 }
 
-#fileInput{
-    padding: 10px;
-}
