@@ -8,11 +8,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FileUploadComponent } from './MyComponents/file-upload/file-upload.component';
+import { NavBarComponent } from './MyComponents/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+body{
+    background-image: url("images/navy-dark-blue-uni-sample.jpg");
+    height: 100%;
+    margin: 0%;
+    background-size: cover;
+}
