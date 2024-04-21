@@ -1,5 +1,6 @@
 package com.vrapa.xmleater.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,6 +23,8 @@ import java.nio.file.Paths;
 @Service
 public class XMLProcessService {
 
+    @Autowired
+    FileSavingService fileSavingService;
     public String convertXml(MultipartFile file , String targetFormat){
 
         try{
@@ -136,7 +139,7 @@ public class XMLProcessService {
                 }
             }
 
-            //Save the AEM compatible file
+//            Save the AEM compatible file
             String downloadFolderPath= System.getProperty("user.home")+"/Downloads/Target_AEM";
             Path outputPath= Paths.get(downloadFolderPath, "target_aem.xml");
             Files.createDirectories(outputPath.getParent());
@@ -153,6 +156,7 @@ public class XMLProcessService {
                     count++;
                 }
             }
+//                    File outputFile=fileSavingService.saveToFile();
 
                     //Write Target XML to a file
                     TransformerFactory transformerFactory= TransformerFactory.newInstance();

@@ -33,7 +33,7 @@ export class FileUploadComponent {
 
     let apiUrl: string;
     if (platform === 'liferay') {
-      apiUrl = 'http://localhost:8080/xmlEater/convertAemXml';
+      apiUrl = 'http://localhost:8080/xmlEater/convertLrXML';
       console.log('Called http://localhost:8080/xmlEater/convertLiferayXml')
     } else if (platform === 'aem') {
       apiUrl = 'http://localhost:8080/xmlEater/convertAemXml';

@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 @Service
 public class FileSavingService {
 
-    public String saveToFile(String xmlContent) {
+    public File saveToFile(String xmlContent) {
         try {
             // Define the download folder path
             String downloadFolderPath = System.getProperty("user.home") + "/Downloads/";
@@ -32,10 +32,10 @@ public class FileSavingService {
             fileWriter.write(xmlContent);
             fileWriter.close();
 
-            return "File saved successfully as: " + outputFile.getAbsolutePath();
+            return outputFile;
         } catch (IOException e) {
             e.printStackTrace();
-            return "Failed to save file: " + e.getMessage();
+            return null;
         }
     }
 }
