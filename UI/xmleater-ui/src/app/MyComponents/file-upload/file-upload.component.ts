@@ -10,11 +10,12 @@ export class FileUploadComponent {
   uploadMessage: string = '';
   constructor(private apiService: ApiService) { }
 
-  uploadFile(platform: string, fileInput: any) {
+  uploadFile(platformSelect2: string, fileInput: any) {
     console.log('File input:', fileInput);
     console.log('File input files:', fileInput.files);
     
     const file = fileInput.files[0];
+    const platform = platformSelect2;
 
     if (!file) {
       this.uploadMessage = 'Please select a file.';
@@ -29,9 +30,21 @@ export class FileUploadComponent {
 
     const formData = new FormData();
     formData.append('file', file);
-    formData.append('targetFormat', platform);
 
-    this.apiService.convertAemXml(formData).subscribe(response=>console.log("API call successful"));
+    let apiUrl: string;
+    if (platform === 'liferay') {
+      apiUrl = 'http://localhost:8080/xmlEater/convertAemXml';
+      console.log('Called http://localhost:8080/xmlEater/convertLiferayXml')
+    } else if (platform === 'aem') {
+      apiUrl = 'http://localhost:8080/xmlEater/convertAemXml';
+      console.log('Called http://localhost:8080/xmlEater/convertAemXml')
+    } else {
+      console.error('Invalid platform:', platform);
+      return; // Exit function if an invalid platform is selected
+    }
+
+    this.apiService.convertXml(formData,apiUrl).subscribe(response=>
+      console.log("API call successful"));
 
   }
 }

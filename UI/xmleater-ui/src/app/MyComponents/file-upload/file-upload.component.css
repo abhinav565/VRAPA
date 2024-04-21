@@ -52,4 +52,20 @@
 .buttonName{
     font-weight: 500;
     letter-spacing: 2px;
+    width: 200px;
 }
+
+.vertical-center {
+    margin-top: 45px;
+    width: 250px;
+    margin-left: 38%;
+  }
+
+  .dropdown{
+    margin-left: 77px;
+  }
+
+  .container2{  
+    margin-top: 50px;
+    margin-left: 200px;
+  }

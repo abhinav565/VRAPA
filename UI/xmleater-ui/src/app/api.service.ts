@@ -8,9 +8,9 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  convertAemXml(formData: FormData) {
+  convertXml(formData: FormData, apiUrl: string) {
     console.log("API Called");
-    return this.http.post<any>('http://localhost:8085/xmlEater/convertAemXml', formData);
+    return this.http.post(apiUrl, formData, { responseType: 'text' });
     
   }
 }
