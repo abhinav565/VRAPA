@@ -15,9 +15,9 @@ public class ConvertAemXmlController {
     XMLProcessService xmlProcessService;
 
     @PostMapping("/convertAemXml")
-    public String convertXmk(@RequestParam ("file") MultipartFile file , @RequestParam("targetFormat") String targetFormat){
+    public String convertXmk(@RequestParam ("file") MultipartFile file ){
         try{
-            String message= xmlProcessService.convertAemXml(file,targetFormat);
+            String message= xmlProcessService.convertAemXml(file);
             }
         catch (Exception e) {
             e.printStackTrace();

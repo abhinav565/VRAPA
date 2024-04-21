@@ -69,7 +69,7 @@ public class XMLProcessService {
         return "ConvertXML Function call ended";
 }
 
-    public String convertAemXml(MultipartFile file, String targetFormat) {
+    public String convertAemXml(MultipartFile file) {
         try{
             //Load the source XML File
             DocumentBuilderFactory factory=DocumentBuilderFactory.newInstance();
@@ -137,7 +137,7 @@ public class XMLProcessService {
             }
 
             //Save the AEM compatible file
-            String downloadFolderPath= System.getProperty("user.home")+"/Downloads/";
+            String downloadFolderPath= System.getProperty("user.home")+"/Downloads/Target_AEM";
             Path outputPath= Paths.get(downloadFolderPath, "target_aem.xml");
             Files.createDirectories(outputPath.getParent());
             File outputFile= outputPath.toFile();
