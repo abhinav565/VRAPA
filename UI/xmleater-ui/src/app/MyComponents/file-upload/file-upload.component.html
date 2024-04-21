@@ -1,6 +1,7 @@
 <h1 class="heading">THE VRAPA PROJECT</h1>
 <p class="logo"></p>
 <div class="container">
+    <div class="container2">
     <div class="container-item">
         <label for="formFile" class="form-label">Upload Your Source XML File:</label>
         <input type="file" name="" #fileInput>
@@ -11,6 +12,8 @@
             <option  value="wordpress">WordPress</option>
             <option  value="liferay" disabled>LifeRay CMS</option>
             <option value="aem" disabled>AEM</option>
+            <option value="joomla" disabled>Joomla</option>
+            <option value="sitecore" disabled>Sitecore</option>
         </select>
     </div>
     <div class="container-item ">
@@ -18,9 +21,10 @@
         <select class="text1 dropdown" #platformSelect2>
             <option  value="liferay">LifeRay CMS</option>
             <option value="aem">AEM</option>
+            <option value="teamsite" disabled>Teamsite</option>
         </select>
     </div>
-
+</div>
     <button class="btn btn-primary btn-lg btn-block uploadButton vertical-center"
         (click)="uploadFile(platformSelect2.value, fileInput)"><span class="buttonName">CONVERT</span></button>
         <div *ngIf="uploadMessage" class="text-red-500">{{ uploadMessage }}</div>
