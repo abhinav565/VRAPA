@@ -6,7 +6,7 @@ import { Observable } from "rxjs"
     providedIn:'root',
 })
 export class requestServer{
-    basePath:string='http://localhost:8080/xmlEater'
+    basePath:string='http://localhost:8085/xmlEater'
     public headers=new HttpHeaders({'Content-Type':'application/json'})
     public fileHeaders=new HttpHeaders({'Content-Type':'x-www-form-urlencoded'})
 
