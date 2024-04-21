@@ -10,7 +10,7 @@ export class ApiService {
 
   convertAemXml(formData: FormData) {
     console.log("API Called");
-    return this.http.post<any>('http://localhost:8080/xmlEater/convertAemXml', formData);
+    return this.http.post('http://localhost:8080/xmlEater/convertAemXml', formData, { responseType: 'text' });
     
   }
 }

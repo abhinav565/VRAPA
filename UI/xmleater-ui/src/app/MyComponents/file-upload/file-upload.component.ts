@@ -31,7 +31,8 @@ export class FileUploadComponent {
     formData.append('file', file);
     formData.append('targetFormat', platform);
 
-    this.apiService.convertAemXml(formData).subscribe(response=>console.log("API call successful"));
+    this.apiService.convertAemXml(formData).subscribe(response=>
+      console.log("API call successful"));
 
   }
 }

@@ -20,16 +20,8 @@
             <option value="aem">AEM</option>
         </select>
     </div>
-    <div class="uploadButton container-item btn-primary">
-        <button (click)="uploadFile(platformSelect.value, fileInput)">CONVERT</button>
-        <div *ngIf="uploadMessage" class="text-red-500">{{ uploadMessage }}</div>
-    <div class="container-item">
-        <label for="formFile" class="form-label">Source URL:</label>
-        <input type="text" class="form-control" >
-    </div>
 
-    <button class="btn btn-primary btn-lg btn-block uploadButton"
+    <button class="btn btn-primary btn-lg btn-block uploadButton vertical-center"
         (click)="uploadFile(platformSelect.value, fileInput)"><span class="buttonName">CONVERT</span></button>
-
-
+        <div *ngIf="uploadMessage" class="text-red-500">{{ uploadMessage }}</div>
 </div>
